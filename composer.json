@@ -1,0 +1,21 @@
+{
+    "name": "culture/dashboard",
+    "description": "Dashboard Foundation for all the Code The Culture Websites.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^6.2",
+        "mockery/mockery": "^0.9.9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Benham",
+            "email": "joshbenham@gmail.com"
+        },
+        {
+            "name": "Sujip Thapa",
+            "email": "sudiptpa@gmail.com"
+        }
+    ],
+    "require": {}
+}
