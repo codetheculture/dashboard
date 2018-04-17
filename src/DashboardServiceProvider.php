@@ -13,7 +13,11 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard');
+
+        $this->publishes([
+            __DIR__ . '/../resources/views' => $this->app->basePath('resources/views/vendor/culture/dashboard'),
+        ]);
     }
 
     /**
