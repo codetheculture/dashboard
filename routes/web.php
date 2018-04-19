@@ -1,6 +1,8 @@
 <?php
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/', 'Culture\Dashboard\Http\Controllers\HomeController@index')->name('home');
+
     // Authentication Routes...
     Route::get('login', 'Culture\Dashboard\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Culture\Dashboard\Http\Controllers\Auth\LoginController@login');
