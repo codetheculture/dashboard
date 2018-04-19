@@ -17,6 +17,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('password/email', 'Culture\Dashboard\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'Culture\Dashboard\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'Culture\Dashboard\Http\Controllers\Auth\ResetPasswordController@reset');
-});
 
-Route::get('/', 'Culture\Dashboard\Http\Controllers\HomeController@index')->name('home');
+    Route::get('dashboard', 'Culture\Dashboard\Http\Controllers\DashboardController@index')->name('dashboard');
+});
