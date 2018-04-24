@@ -13,14 +13,15 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/../config/dashboard.php' => config_path('dashboard.php')
+        ], 'config');
+
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
-        $this->publishes([
-            __DIR__ . '/../config/dashboard.php' => config_path('dashboard.php'),
-            __DIR__ . '/../resources/views' => $this->app->basePath('resources/views/vendor/culture/dashboard'),
-        ]);
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard');
     }
 
     /**
@@ -30,6 +31,6 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/../config/dashboard.php', 'dashboard');
     }
 }
